@@ -1,9 +1,16 @@
 from src.decorators import log
 from src.external_api import get_transaction_amount
 from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
+from src.masks import get_mask_account, get_mask_card_number
 from src.processing import filter_by_state, sort_by_date
 from src.utils import get_json_transactions
 from src.widget import get_date, mask_account_card
+
+card_number = input("Введите номер карты:")
+account_number = input("Введите номер счета:")
+
+print(get_mask_card_number(card_number))
+print(get_mask_account(account_number))
 
 info = input("Введите номер карты или счета:")
 date_str = input("Введите дату:")
