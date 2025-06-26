@@ -1,7 +1,7 @@
-from src.masks import get_mask_account, get_mask_card_number
+from src.widget import get_date, mask_account_card
 
-card_number = input("Введите номер карты:")
-account_number = input("Введите номер счета:")
+info = input("Введите номер карты или счета:")
+date_str = input("Введите дату:")
 
-print(get_mask_card_number(card_number))
-print(get_mask_account(account_number))
+print(mask_account_card(info))
+print(get_date(date_str))
