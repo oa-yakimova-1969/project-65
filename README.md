@@ -26,3 +26,17 @@ pip install -r requirements.txt
 ## Лицензия:
 
 Этот проект лицензирован по [лицензии MIT](LICENSE).
+
+Для тестирования проекта используется библиотека `pytest`. Чтобы запустить тесты, выполните команду:
+
+```bash
+pytest
+```
+
+Тесты покрывают следующие модули и функции:
+- `masks`: функции `get_mask_card_number` и `get_mask_account`.
+- `widget`: функции `mask_account_card` и `get_date`.
+- `processing`: функции `filter_by_state` и `sort_by_date`.
+
+Покрытие тестами составляет более 80% кода проекта.
+
