@@ -1,6 +1,8 @@
 from src.decorators import log
+from src.external_api import get_transaction_amount
 from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 from src.processing import filter_by_state, sort_by_date
+from src.utils import get_json_transactions
 from src.widget import get_date, mask_account_card
 
 info = input("Введите номер карты или счета:")
@@ -87,3 +89,16 @@ def my_function(x, y):
 
 
 my_function(1, 2)
+
+data_transactions = get_json_transactions("data/operations.json")
+print(data_transactions)
+
+transaction_ = {
+    "id": 441945886,
+    "state": "EXECUTED",
+    "date": "2019-08-26T10:50:58.294041",
+    "operationAmount": {"amount": "100.00", "currency": {"name": "USD", "code": "USD"}},
+}
+
+transaction_amount = get_transaction_amount(transaction_)
+print(transaction_amount)
