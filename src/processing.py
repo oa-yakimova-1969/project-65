@@ -1,3 +1,6 @@
+from typing import Any
+
+
 def filter_by_state(transactions: list[dict[str, Any]], state: str = "EXECUTED") -> list[dict[str, Any]]:
     """Функция фильтрации операций по ключу 'state'"""
     filtered_transactions = []
