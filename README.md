@@ -92,3 +92,21 @@ my_function error: тип ошибки. Inputs: (1, 2), {}
 Где 
 тип ошибки
  заменяется на текст ошибки.
+
+### Модуль для работы с CSV и Excel файлами
+
+- `read_csv_transactions(file_path: str) -> List[Dict]`: Считывает финансовые операции из CSV файла и возвращает список словарей с транзакциями.
+- `read_excel_transactions(file_path: str) -> List[Dict]`: Считывает финансовые операции из Excel файла и возвращает список словарей с транзакциями.
+
+### Примеры использования
+
+```python
+from my_module import read_csv_transactions, read_excel_transactions
+
+# Пример использования функции для CSV
+csv_transactions = read_csv_transactions('path/to/transactions.csv')
+print(csv_transactions)
+
+# Пример использования функции для Excel
+excel_transactions = read_excel_transactions('path/to/transactions.xlsx')
+print(excel_transactions)

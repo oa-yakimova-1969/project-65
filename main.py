@@ -3,6 +3,7 @@ from src.external_api import get_transaction_amount
 from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 from src.masks import get_mask_account, get_mask_card_number
 from src.processing import filter_by_state, sort_by_date
+from src.readers import read_csv_transactions, read_excel_transactions
 from src.utils import get_json_transactions
 from src.widget import get_date, mask_account_card
 
@@ -109,3 +110,7 @@ transaction_ = {
 
 transaction_amount = get_transaction_amount(transaction_)
 print(transaction_amount)
+
+print(read_csv_transactions("data/transactions.csv"))
+
+print(read_excel_transactions("data/transactions_excel.xlsx"))
