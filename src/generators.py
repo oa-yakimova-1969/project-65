@@ -22,4 +22,3 @@ def card_number_generator(start, stop):
                 yield card_number
     else:
         yield "Ошибка ввода"
-        
