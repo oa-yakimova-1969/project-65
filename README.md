@@ -27,6 +27,8 @@ pip install -r requirements.txt
 
 Этот проект лицензирован по [лицензии MIT](LICENSE).
 
+### Тестирование
+
 Для тестирования проекта используется библиотека `pytest`. Чтобы запустить тесты, выполните команду:
 
 ```bash
@@ -65,3 +67,28 @@ for description in transaction_descriptions(transactions):
 for card in card_number_generator(4000123456789010, 4000123456789015):
     print(card)
 
+## Модуль Decorators
+
+Модуль содержит декоратор `log`, который логирует выполнение функций.
+
+#### Пример использования декоратора
+
+@log(filename="mylog.txt")
+def my_function(x, y):
+    return x + y
+
+my_function(1, 2)
+
+Ожидаемый вывод в лог-файл 
+mylog.txt
+ при успешном выполнении:
+
+my_function ok
+
+Ожидаемый вывод при ошибке:
+
+my_function error: тип ошибки. Inputs: (1, 2), {}
+
+Где 
+тип ошибки
+ заменяется на текст ошибки.
