@@ -6,6 +6,7 @@ from src.processing import filter_by_state, sort_by_date
 from src.readers import read_csv_transactions, read_excel_transactions
 from src.utils import get_json_transactions
 from src.widget import get_date, mask_account_card
+from src.services import search_for_trans
 
 card_number = input("Введите номер карты:")
 account_number = input("Введите номер счета:")
@@ -114,3 +115,5 @@ print(transaction_amount)
 print(read_csv_transactions("data/transactions.csv"))
 
 print(read_excel_transactions("data/transactions_excel.xlsx"))
+
+print(search_for_trans(trans, 'перевод организации'))
