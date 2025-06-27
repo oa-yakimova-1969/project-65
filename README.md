@@ -100,13 +100,28 @@ my_function error: тип ошибки. Inputs: (1, 2), {}
 
 ### Примеры использования
 
-```python
+
 from my_module import read_csv_transactions, read_excel_transactions
 
-# Пример использования функции для CSV
+#### Пример использования функции для CSV
 csv_transactions = read_csv_transactions('path/to/transactions.csv')
 print(csv_transactions)
 
-# Пример использования функции для Excel
+#### Пример использования функции для Excel
 excel_transactions = read_excel_transactions('path/to/transactions.xlsx')
 print(excel_transactions)
+
+### Функционал для поиска по строке и подсчета категорий
+
+- search_for_trans(trans: list[dict], search_string: str) -> list[dict]:
+функция принимает список банковских операций и строку поиска, а возвращает список словарей, у которых в описании есть данная строка.
+- number_of_transactions(trans: list[dict], category_list: list) -> dict:
+функция принимает список транзакций и категорий операций, а возвращает
+словарь с количеством транзакций по каждой категории
+
+### Функция Main
+
+- Функция main в модуле main 
+отвечает за основную логику проекта 
+и связывает функциональности между собой.
+

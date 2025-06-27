@@ -5,7 +5,7 @@ def filter_by_state(transactions: list[dict[str, Any]], state: str = "EXECUTED")
     """Функция фильтрации операций по ключу 'state'"""
     filtered_transactions = []
     for transaction in transactions:
-        if transaction["state"] == state:
+        if transaction.get("state") == state:
             filtered_transactions.append(transaction)
     return filtered_transactions
 
