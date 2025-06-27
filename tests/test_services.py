@@ -1,6 +1,6 @@
 import pytest
 
-from src.services import search_for_trans, number_of_transactions
+from src.services import number_of_transactions, search_for_trans
 
 list_operations = [
     {"description": "Оплата услуг", "amount": 100},

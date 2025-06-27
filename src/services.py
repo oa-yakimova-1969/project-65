@@ -1,7 +1,6 @@
 import re
 from collections import Counter
 
-
 trans = [
     {
         "id": 939719570,
@@ -66,6 +65,8 @@ trans = [
 ]
 
 search_string = "перевод организации"
+
+
 def search_for_trans(trans, search_string):
     """Функция возвращает список словарей, у которых в описании есть данная строка"""
     result = []

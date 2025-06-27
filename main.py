@@ -4,9 +4,9 @@ from src.generators import card_number_generator, filter_by_currency, transactio
 from src.masks import get_mask_account, get_mask_card_number
 from src.processing import filter_by_state, sort_by_date
 from src.readers import read_csv_transactions, read_excel_transactions
+from src.services import number_of_transactions, search_for_trans
 from src.utils import get_json_transactions
 from src.widget import get_date, mask_account_card
-from src.services import search_for_trans, number_of_transactions
 
 card_number = input("Введите номер карты:")
 account_number = input("Введите номер счета:")
@@ -122,7 +122,7 @@ print(read_csv_transactions("data/transactions.csv"))
 
 print(read_excel_transactions("data/transactions_excel.xlsx"))
 
-print(search_for_trans(trans, 'перевод организации'))
+print(search_for_trans(trans, "перевод организации"))
 
 print(number_of_transactions(trans, category_list))
 
@@ -202,14 +202,8 @@ def main():
             if i.get("description") == "Открытие вклада":
                 from_to = mask_account_card(i.get("to", ""))
             else:
-                from_to = (
-                    mask_account_card(i.get("from", ""))
-                    + " -> "
-                    + mask_account_card(i.get("to", ""))
-                )
-            print(
-                f"{i_data} {i.get("description", "")}\n{from_to}\nСумма: {amount} {currency}\n"
-            )
+                from_to = mask_account_card(i.get("from", "")) + " -> " + mask_account_card(i.get("to", ""))
+            print(f"{i_data} {i.get("description", "")}\n{from_to}\nСумма: {amount} {currency}\n")
     elif file_type == "2" or file_type == "3":
         for i in search_transactions:
             currency = i.get("currency_code", "")
@@ -218,14 +212,8 @@ def main():
             if i.get("description") == "Открытие вклада":
                 from_to = mask_account_card(i.get("to", ""))
             else:
-                from_to = (
-                    mask_account_card(i.get("from", ""))
-                    + " -> "
-                    + mask_account_card(i.get("to", ""))
-                )
-            print(
-                f"{i_data} {i.get("description", "")}\n{from_to}\nСумма: {amount} {currency}\n"
-            )
+                from_to = mask_account_card(i.get("from", "")) + " -> " + mask_account_card(i.get("to", ""))
+            print(f"{i_data} {i.get("description", "")}\n{from_to}\nСумма: {amount} {currency}\n")
 
 
 main()
