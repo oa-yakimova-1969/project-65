@@ -1,4 +1,6 @@
 import re
+from collections import Counter
+
 
 trans = [
     {
@@ -73,3 +75,21 @@ def search_for_trans(trans, search_string):
         ):
             result.append(tran)
     return result
+
+
+category_list = [
+    "перевод организации",
+    "перевод со счета на счет",
+    "перевод с карты на карту",
+]
+
+
+def number_of_transactions(trans, category_list):
+    """Функция принимает список транзакций и категорий операций, а возвращает
+    словарь с количеством транзакций по каждой категории"""
+    counter = Counter()
+    for tran in trans:
+        category = tran.get("description", "").lower()
+        if category in category_list:
+            counter[category] += 1
+    return dict(counter)
